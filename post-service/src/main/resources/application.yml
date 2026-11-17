@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+  application:
+    name: post-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/postdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+jwt:
+  secret: change-me-change-me-change-me-change-me-32b
